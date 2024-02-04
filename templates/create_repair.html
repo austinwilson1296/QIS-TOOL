@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technician Interface</title>
-  {% include bootstrap.html' %}
+  {% include 'bootstrap.html' %}
 </head>
 <body>
     <h1>Initiate Repair Job</h1>
@@ -13,13 +13,13 @@
         <label for="start_time" class='form-control'>Start Time:</label>
         <input type="text" id="start_time" name="start_time" required><br>
 
-        <label for="end_time">End Time:</label>
+        <label for="end_time" class='form-control'>End Time:</label>
         <input type="text" id="end_time" name="end_time" required><br>
 
-        <label for="sku_number">SKU Number:</label>
+        <label for="sku_number" class='form-control'>SKU Number:</label>
         <input type="text" id="sku_number" name="sku_number" required><br>
 
-        <label for="repair_codes">Repair Codes:</label>
+        <label for="repair_codes" class='form-control'>Repair Codes:</label>
         <input type="text" id="repair_codes" name="repair_codes" required><br>
       </div>
         <button type="submit">Submit</button>

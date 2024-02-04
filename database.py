@@ -1,4 +1,6 @@
 from sqlalchemy import create_engine, text
+import os 
 
-db_connection_string = 'mysql+pymysql://zaga4d0tpprdnoo9bwid:pscale_pw_rTwEtrzKtgZxKgNsJ3T4ySAt2gCateZ431SsQE5Wc0e@aws.connect.psdb.cloud/shop_tool'
-engine = create_engine(db_connection_string)
+my_secret = os.environ['DB_CONNECTION_STRING']
+db = my_secret
+engine = create_engine(db, connect_args={"ssl": {"ssl_ca": "/etc/ssl/cert.pem"}})
