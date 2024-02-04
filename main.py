@@ -11,5 +11,5 @@ def index():
 def create_repair():
   return render_template('create_repair.html')
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=8080)
+  app.run(host='0.0.0.0', debug=True)
     
