@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      
+      Repair Jobs
+      {% include 'bootstrap.html' %}
+    </title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+  {% include 'nav.html' %}
+    <h1>Repair Jobs</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>SKU Number</th>
+                <th>Repair Codes</th>
+                <th>Image Path</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for repair_job in repair_jobs %}
+                <tr>
+                    <td>{{ repair_job.id }}</td>
+                    <td>{{ repair_job.start_time }}</td>
+                    <td>{{ repair_job.end_time }}</td>
+                    <td>{{ repair_job.sku_number }}</td>
+                    <td>{{ repair_job.repair_codes }}</td>
+                    <td>{{ repair_job.image_path }}</td>
+                    <td>{{ repair_job.status }}</td>
+                    <td>
+                        {% if repair_job.status == 'Pending' %}
+                            <a href="{{ url_for('approve_repair_job', id=repair_job.id) }}">Approve</a>
+                            <a href="{{ url_for('deny_repair_job', id=repair_job.id) }}">Deny</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
