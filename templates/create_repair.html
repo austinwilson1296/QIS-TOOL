@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Initiate Repair Job</h1>
-    <form action="/" method="post">
+    <form action="#" method="post">
       <div class = 'form-group'>
         <label for="start_time" class='form-control'>Start Time:</label>
         <input type="text" id="start_time" name="start_time" required><br>
@@ -23,6 +23,7 @@
         <input type="text" id="repair_codes" name="repair_codes" required><br>
       </div>
         <button type="submit">Submit</button>
+      <button onclick="location.href='{{ url_for('index') }}'">Exit</button>
     </form>
 </body>
 </html>

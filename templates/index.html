@@ -14,9 +14,10 @@
             width: 100%;
         }
         th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
+            border: 5px solid #dddddd;
+            text-align: center;
+            font-weight: bold;
+            padding: 5px;
         }
         th {
             background-color: #f2f2f2;
@@ -25,16 +26,15 @@
 </head>
 <body>
   {% include 'nav.html' %}
-    <h1>Repair Jobs</h1>
-    <table>
+    <h1 style="text-align:center">Repair Jobs</h1>
+    <table class = 'table'>
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Start Time</th>
+                <th>Start Time</th><br>
                 <th>End Time</th>
                 <th>SKU Number</th>
                 <th>Repair Codes</th>
-                <th>Image Path</th>
                 <th>Status</th>
                 <th>Actions</th>
             </tr>
@@ -47,7 +47,7 @@
                     <td>{{ repair_job.end_time }}</td>
                     <td>{{ repair_job.sku_number }}</td>
                     <td>{{ repair_job.repair_codes }}</td>
-                    <td>{{ repair_job.image_path }}</td>
+
                     <td>{{ repair_job.status }}</td>
                     <td>
                         {% if repair_job.status == 'Pending' %}
